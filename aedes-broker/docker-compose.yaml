@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  broker:
+    build: .
+    ports:
+      - "1883:1883"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
