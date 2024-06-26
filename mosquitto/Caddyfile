@@ -1,3 +1,0 @@
-mqtt.domain.com {
-        reverse_proxy ws://mqtt5:9001
-}
